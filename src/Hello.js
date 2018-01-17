@@ -2,6 +2,15 @@ import  React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Hello extends Component {
+    constructor(props){
+        super(props);
+        this.state = {txt: 'this the state text'};
+    }
+
+    onChange = e => {
+        this.setState({txt: e.target.value});
+    }
+
     render() {
         let txt = this.props.txt;
         return (
@@ -9,7 +18,9 @@ class Hello extends Component {
                 <h2>Hello from Hello component</h2>
                 <span>txt prop from variable: {txt}</span> <br/>
                 <span>{this.props.txt}</span> <br />
-                <span>count: {this.props.count}</span>
+                <span>count: {this.props.count}</span> <br />
+                <input onChange={this.onChange} />
+                <span>State: {this.state.txt}</span>
             </div>
         );
     }
