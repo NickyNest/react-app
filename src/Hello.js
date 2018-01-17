@@ -19,12 +19,15 @@ class Hello extends Component {
                 <span>txt prop from variable: {txt}</span> <br/>
                 <span>{this.props.txt}</span> <br />
                 <span>count: {this.props.count}</span> <br />
-                <input onChange={this.onChange} />
+                <Widget update={this.onChange} />
                 <span>State: {this.state.txt}</span>
             </div>
         );
     }
 }
+
+const Widget = (props) =>
+    <input type='text' onChange={props.update} />
 
 Hello.propTypes = {
     txt: PropTypes.string,
