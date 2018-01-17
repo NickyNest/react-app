@@ -18,9 +18,10 @@ class Hello extends Component {
                 <h2>Hello from Hello component</h2>
                 <span>txt prop from variable: {txt}</span> <br/>
                 <span>{this.props.txt}</span> <br />
-                <span>count: {this.props.count}</span> <br />
+                <span>count: {this.props.count}</span> <br/>
                 <Widget update={this.onChange} />
-                <span>State: {this.state.txt}</span>
+                <span>State: {this.state.txt}</span> <br/>
+                <Button>React</Button>
             </div>
         );
     }
@@ -28,6 +29,8 @@ class Hello extends Component {
 
 const Widget = (props) =>
     <input type='text' onChange={props.update} />
+
+const Button = ({children}) => <button>{children}</button>
 
 Hello.propTypes = {
     txt: PropTypes.string,
