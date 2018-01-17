@@ -19,7 +19,7 @@ class Hello extends Component {
                 <span>txt prop from variable: {txt}</span> <br/>
                 <span>{this.props.txt}</span> <br />
                 <span>count: {this.props.count}</span> <br/>
-                <Widget update={this.onChange} />
+                <Widget update={this.onChange} placeholder='Add text' />
                 <span>State: {this.state.txt}</span> <br/>
                 <Button>React</Button>
             </div>
@@ -28,7 +28,18 @@ class Hello extends Component {
 }
 
 const Widget = (props) =>
-    <input type='text' onChange={props.update} />
+    <input type='text' onChange={props.update} placeholder={props.placeholder} />
+
+Widget.propTypes = {
+    placeholder(props, propName, component){
+        if(!(propName in props)){
+            return new Error(`missing ${propName}`);
+        }
+        if(props[propName].length < 5){
+            return new Error(`${propName} is too short`);
+        }
+    }
+};
 
 const Button = ({children}) => <button>{children}</button>
 
