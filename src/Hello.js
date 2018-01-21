@@ -1,4 +1,5 @@
 import  React, { Component } from 'react';
+import EventHandler from './EventHandler';
 import PropTypes from 'prop-types';
 
 class Hello extends Component {
@@ -18,10 +19,11 @@ class Hello extends Component {
                 <h2>Hello from Hello component</h2>
                 <span>txt prop from variable: {txt}</span> <br/>
                 <span>{this.props.txt}</span> <br />
-                <span>count: {this.props.count}</span> <br/>
+                <span>count: {this.props.count}</span> <br/><br />
                 <Widget update={this.onChange} placeholder='Add text' />
-                <span>State: {this.state.txt}</span> <br/>
-                <Button>React</Button>
+                <span>State: {this.state.txt}</span> <br/><br />
+                <Button>React</Button> <br /><br />
+                <EventHandler />
             </div>
         );
     }
