@@ -1,5 +1,6 @@
 import  React, { Component } from 'react';
 import EventHandler from './EventHandler';
+import RefHandler from './RefHandler';
 import PropTypes from 'prop-types';
 
 class Hello extends Component {
@@ -24,6 +25,9 @@ class Hello extends Component {
                 <span>State: {this.state.txt}</span> <br/><br />
                 <Button>React</Button> <br /><br />
                 <EventHandler />
+                <hr/>
+                <h3>Work wirh refs</h3>
+                <RefHandler />
             </div>
         );
     }
