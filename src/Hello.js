@@ -1,6 +1,7 @@
 import  React, { Component } from 'react';
 import EventHandler from './EventHandler';
 import RefHandler from './RefHandler';
+import LifecycleWrapper from './Lifecycle';
 import PropTypes from 'prop-types';
 
 class Hello extends Component {
@@ -28,6 +29,9 @@ class Hello extends Component {
                 <hr/>
                 <h3>Work wirh refs</h3>
                 <RefHandler />
+                <hr/>
+                <h3>Component Lifecycle</h3>
+                <LifecycleWrapper />
             </div>
         );
     }
