@@ -2,16 +2,21 @@ import  React, { Component } from 'react';
 import EventHandler from './EventHandler';
 import RefHandler from './RefHandler';
 import LifecycleWrapper from './Lifecycle';
+import PropsHandler from './PropsHandler';
 import PropTypes from 'prop-types';
 
 class Hello extends Component {
     constructor(props){
         super(props);
-        this.state = {txt: 'this the state text'};
+        this.state = {txt: 'this the state text', val: 0};
     }
 
     onChange = e => {
         this.setState({txt: e.target.value});
+    }
+
+    increaseVal = () => {
+        this.setState({val: this.state.val + 1});
     }
 
     render() {
@@ -32,6 +37,9 @@ class Hello extends Component {
                 <hr/>
                 <h3>Component Lifecycle</h3>
                 <LifecycleWrapper />
+                <hr/>
+                <h3>Control React Component Updates When New Props Are Received</h3>
+                <PropsHandler increaseVal={this.increaseVal} val={this.state.val} />
             </div>
         );
     }
