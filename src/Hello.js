@@ -3,6 +3,7 @@ import EventHandler from './EventHandler';
 import RefHandler from './RefHandler';
 import LifecycleWrapper from './Lifecycle';
 import PropsHandler from './PropsHandler';
+import HOCComponent from './HOCComponent';
 import PropTypes from 'prop-types';
 
 class Hello extends Component {
@@ -40,6 +41,9 @@ class Hello extends Component {
                 <hr/>
                 <h3>Control React Component Updates When New Props Are Received</h3>
                 <PropsHandler increaseVal={this.increaseVal} val={this.state.val} />
+                <hr/>
+                <h3>Working with Higher Order Components</h3>
+                <HOCComponent />
             </div>
         );
     }
